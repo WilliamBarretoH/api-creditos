@@ -1,0 +1,23 @@
+<div class="page-container">
+  <div class="credit-card">
+    <h1 class="card-title">Consulta de Créditos</h1>
+
+    <app-search-form
+      [loading]="loading"
+      (search)="onSearch($event.filtro, $event.isNfse)">
+    </app-search-form>
+
+    <div *ngIf="!loading && resultados.length" class="table-wrapper">
+      <!-- aqui o seu componente de tabela -->
+      <app-credit-table [data]="resultados"></app-credit-table>
+    </div>
+
+    <div *ngIf="!loading && !resultados.length && !error" class="no-results">
+      Nenhum resultado encontrado.
+    </div>
+
+    <div *ngIf="error" class="error">
+      Erro: {{ error }}
+    </div>
+  </div>
+</div>

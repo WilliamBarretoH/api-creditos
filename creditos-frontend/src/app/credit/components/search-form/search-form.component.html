@@ -1,0 +1,4 @@
+<form [formGroup]="form" (ngSubmit)="onSubmit()" class="search-form">
+  <input formControlName="filtro" placeholder="Digite NFS-e ou número de crédito" />
+  <button type="submit" [disabled]="loading">Buscar</button>
+</form>

@@ -1,0 +1,30 @@
+<table class="credit-table">
+  <thead>
+    <tr>
+      <th>Crédito</th>
+      <th>NFS-e</th>
+      <th>Data</th>
+      <th>ISSQN</th>
+      <th>Tipo</th>
+      <th>Simples</th>
+      <th>Aliq.</th>
+      <th>Faturado</th>
+      <th>Dedução</th>
+      <th>Base</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let c of data">
+      <td>{{ c.numeroCredito }}</td>
+      <td>{{ c.numeroNfse }}</td>
+      <td>{{ c.dataConstituicao }}</td>
+      <td>{{ c.valorIssqn | number:'1.2-2' }}</td>
+      <td>{{ c.tipoCredito }}</td>
+      <td>{{ c.simplesNacional }}</td>
+      <td>{{ c.aliquota }}%</td>
+      <td>{{ c.valorFaturado | number:'1.2-2' }}</td>
+      <td>{{ c.valorDeducao | number:'1.2-2' }}</td>
+      <td>{{ c.baseCalculo | number:'1.2-2' }}</td>
+    </tr>
+  </tbody>
+</table>
